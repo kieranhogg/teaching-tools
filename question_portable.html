@@ -1,0 +1,134 @@
+<html>
+
+<head>
+  <style>
+  <!-- CSS taken from https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css and in-lined -->
+  .btn {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+          touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+  </style>
+  <script type="text/javascript">
+    var answers_1 = 0;
+    var answers_2 = 0;
+    var answers_3 = 0;
+    var answers_4 = 0;
+    var total = 0;
+
+    function setup() {
+        document.getElementById("option1_button").innerText = document.getElementById("option1").value;
+        document.getElementById("option2_button").innerText = document.getElementById("option2").value;
+        document.getElementById("option3_button").innerText = document.getElementById("option3").value;
+        document.getElementById("option4_button").innerText = document.getElementById("option4").value;
+        
+        document.getElementById("question_display").innerText = document.getElementById("question").value;
+
+        document.getElementById('setup').style.display = 'none';
+        document.getElementById('questions').style.display = 'block';
+        document.getElementById('answers').style.display = 'block';
+    }
+
+
+ function increase(answer) {
+   if (answer == '1') {
+        answers_1++;
+        val = answers_1;
+   } else if (answer == '2') {
+        answers_2++;
+        val = answers_2;
+   } else if (answer == '3') {
+        answers_3++;
+        val = answers_3;
+   } else {
+        answers_4++;
+        val = answers_4;
+   }
+   total++;
+   document.getElementById(answer + '_count').innerHTML = val;
+   document.getElementById('progress-bar-success').setAttribute("style", "width:" + answers_1 / total * 100 + "%");
+   document.getElementById('progress-bar-info').setAttribute("style", "width:" + answers_2 / total * 100 + "%");
+   document.getElementById('progress-bar-warning').setAttribute("style", "width:" + answers_3 / total * 100 + "%");
+   document.getElementById('progress-bar-danger').setAttribute("style", "width:" + answers_4 / total * 100 + "%");
+ }
+  </script>
+</head>
+
+<body>
+  <div style="margin: 0 auto; width: 70%">
+    <div id="setup">
+      <h2>Question</h2>
+      <textarea id="question" class="form-control" rows="3"></textarea>
+      <h2>Option 1</h2>
+      <textarea id="option1" class="form-control" rows="3"></textarea>
+      <h2>Option 2</h2>
+      <textarea id="option2" class="form-control" rows="3"></textarea>
+       <h2>Option 3</h2>
+      <textarea id="option3" class="form-control" rows="3"></textarea>
+       <h2>Option 4</h2>
+      <textarea id="option4" class="form-control" rows="3"></textarea>
+      <br />
+      <button type="button" class="btn btn-success btn-lg" onclick="setup();">BEGIN!</button>
+    </div>
+      
+      <div id="questions" style="display:none;">
+      <h2 id="question_display"></h2>
+      <div class="progress">
+        <div id="progress-bar-success" class="progress-bar progress-bar-success" style="width: 0%">
+          <span class="sr-only"></span>
+        </div>
+        <div id="progress-bar-info" class="progress-bar progress-bar-info progress-bar-striped" style="width: 0%">
+          <span class="sr-only"></span>
+        </div>
+        <div id="progress-bar-warning" class="progress-bar progress-bar-warning progress-bar-striped" style="width: 0%">
+          <span class="sr-only"></span>
+        </div>
+        <div id="progress-bar-danger" class="progress-bar progress-bar-danger" style="width: 0%">
+        </div>
+      </div>
+      </div>
+      
+      
+
+    <div id="answers" style="display:none; font-size: 1.8em;" class="text-center">      
+      <button id="option1_button" type="button" class="btn btn-success btn-lg" onclick="increase('1');"></button>
+      <div class="count" id="1_count" style="float: right;">0</div>
+      <br /><br/>
+
+      <button id="option2_button" type="button" class="btn btn-info btn-lg" onclick="increase('2');"></button>
+      <div class="count" id="2_count" style="float: right;">0</div>
+      <br /><br/>
+
+      <button id="option3_button" type="button" class="btn btn-warning btn-lg" onclick="increase('3');"></button>
+      <div class="count" id="3_count" style="float: right;">0</div>
+      <br />
+      <br />
+
+      <button id="option4_button" type="button" class="btn btn-danger btn-lg" onclick="increase('4');"></button>
+      <div class="count" id="4_count" style="float: right;">0</div>
+        <br />
+        <br />
+    </div>
+
+
+  </div>
+  </div>
+</body>
+
+</html>
