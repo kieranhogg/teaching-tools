@@ -15,6 +15,14 @@
         document.getElementById("option3_button").innerText = document.getElementById("option3").value;
         document.getElementById("option4_button").innerText = document.getElementById("option4").value;
         
+        if document.getElementById("option3").value == "" {
+            document.getElementById("option3").style.display = 'none';
+        }
+        
+        if document.getElementById("option4").value == "" {
+            document.getElementById("option4").style.display = 'none';
+        }
+        
         document.getElementById("question_display").innerText = document.getElementById("question").value;
 
         document.getElementById('setup').style.display = 'none';
