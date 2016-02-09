@@ -17,10 +17,11 @@
         
         if (document.getElementById("option3").value == "") {
             document.getElementById("option3_button").style.display = 'none';
+            document.getElementById("3_count").style.display = 'none';
         }
         
         if (document.getElementById("option4").value == "") {
-            document.getElementById("option4_button").style.display = 'none';
+            document.getElementById("4_count").style.display = 'none';
         }
         
         document.getElementById("question_display").innerText = document.getElementById("question").value;
@@ -60,6 +61,7 @@
     <div id="setup">
       <h2>Question</h2>
       <textarea id="question" class="form-control" rows="3"></textarea>
+      <p>At least two required, leave blank to exclude.</p>
       <h2>Option 1</h2>
       <textarea id="option1" class="form-control" rows="3"></textarea>
       <h2>Option 2</h2>
