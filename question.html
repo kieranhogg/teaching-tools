@@ -33,25 +33,32 @@
     }
 
  function decrease(answer) {
-   if (answer == '1') {
+   removed = false;
+   if (answer == '1' && answers_1 > 0) {
         answers_1--;
         val = answers_1;
-   } else if (answer == '2') {
+        removed = true;
+   } else if (answer == '2' && answers_2 > 0) {
         answers_2--
         val = answers_2;
-   } else if (answer == '3') {
+        removed = true;
+   } else if (answer == '3' && answers_3 > 0) {
         answers_3--
         val = answers_3;
-   } else {
+        removed = true;
+   } else if (answers_4 > 0) {
         answers_4--;
         val = answers_4;
+        removed = true;
    }
-   total++;
-   document.getElementById(answer + '_count').innerHTML = val;
-   document.getElementById('progress-bar-success').setAttribute("style", "width:" + answers_1 / total * 100 + "%");
-   document.getElementById('progress-bar-info').setAttribute("style", "width:" + answers_2 / total * 100 + "%");
-   document.getElementById('progress-bar-warning').setAttribute("style", "width:" + answers_3 / total * 100 + "%");
-   document.getElementById('progress-bar-danger').setAttribute("style", "width:" + answers_4 / total * 100 + "%");
+   if (removed === true) {
+       total--;
+       document.getElementById(answer + '_count').innerHTML = val;
+       document.getElementById('progress-bar-success').setAttribute("style", "width:" + answers_1 / total * 100 + "%");
+       document.getElementById('progress-bar-info').setAttribute("style", "width:" + answers_2 / total * 100 + "%");
+       document.getElementById('progress-bar-warning').setAttribute("style", "width:" + answers_3 / total * 100 + "%");
+       document.getElementById('progress-bar-danger').setAttribute("style", "width:" + answers_4 / total * 100 + "%");
+   }
  }
 
 
@@ -122,16 +129,16 @@
       <br /><br/>
 
       <button id="option2_button" type="button" class="btn btn-info btn-lg" onclick="increase('2');"></button>
-      <div style="float: right;"><span class="count" id="2_count" >0</span> vote(s)</div>
+      <div style="float: right;"><span class="count" id="2_count" >0</span> vote(s) <a href="javascript:void(0)" onclick="decrease('2');">[-]</a></div>
       <br /><br/>
 
       <button id="option3_button" type="button" class="btn btn-warning btn-lg" onclick="increase('3');"></button>
-      <div id="3_text" style="float: right;"><span class="count" id="3_count" >0</span> vote(s)</div>
+      <div id="3_text" style="float: right;"><span class="count" id="3_count" >0</span> vote(s) <a href="javascript:void(0)" onclick="decrease('3');">[-]</a></div>
       <br />
       <br />
 
       <button id="option4_button" type="button" class="btn btn-danger btn-lg" onclick="increase('4');"></button>
-      <div id="4_text" style="float: right;"><span class="count" id="4_count" >0</span> vote(s)</div>
+      <div id="4_text" style="float: right;"><span class="count" id="4_count" >0</span> vote(s) <a href="javascript:void(0)" onclick="decrease('4');">[-]</a></div>
         <br />
         <br />
         <img src="http://icons.iconarchive.com/icons/iconsmind/outline/128/Hand-Touch-icon.png" style="float: left; margin-top: -160px;" />
