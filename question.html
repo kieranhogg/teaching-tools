@@ -32,6 +32,28 @@
         document.getElementById('answers').style.display = 'block';
     }
 
+ function decrease(answer) {
+   if (answer == '1') {
+        answers_1--;
+        val = answers_1;
+   } else if (answer == '2') {
+        answers_2--
+        val = answers_2;
+   } else if (answer == '3') {
+        answers_3--
+        val = answers_3;
+   } else {
+        answers_4--;
+        val = answers_4;
+   }
+   total++;
+   document.getElementById(answer + '_count').innerHTML = val;
+   document.getElementById('progress-bar-success').setAttribute("style", "width:" + answers_1 / total * 100 + "%");
+   document.getElementById('progress-bar-info').setAttribute("style", "width:" + answers_2 / total * 100 + "%");
+   document.getElementById('progress-bar-warning').setAttribute("style", "width:" + answers_3 / total * 100 + "%");
+   document.getElementById('progress-bar-danger').setAttribute("style", "width:" + answers_4 / total * 100 + "%");
+ }
+
 
  function increase(answer) {
    if (answer == '1') {
@@ -96,7 +118,7 @@
 
     <div id="answers" style="display:none; font-size: 1.8em;" class="text-center">      
       <button id="option1_button" type="button" class="btn btn-success btn-lg" onclick="increase('1');"></button>
-      <div style="float: right;"><span class="count" id="1_count" >0</span> vote(s)</div>
+      <div style="float: right;"><span class="count" id="1_count" >0</span> vote(s) <a href="javascript:void(0)" onclick="decrease('1');">[-]</a></div>
       <br /><br/>
 
       <button id="option2_button" type="button" class="btn btn-info btn-lg" onclick="increase('2');"></button>
