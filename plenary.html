@@ -23,39 +23,39 @@
     var total_post = 0;
 
     function setup() {
-        if ($('ams').checked) {
-            $('all_text').innerHTML = "<strong>All</strong>: " + $('all').value;
-            $('most_text').innerHTML = "<strong>Most</strong>: " + $('most').value;
-            $('some_text').innerHTML = "<strong>Some</strong>: " + $('some').value;
+        if ($('#ams').checked) {
+            $('#all_text').innerHTML = "<strong>All</strong>: " + $('#all').value;
+            $('#most_text').innerHTML = "<strong>Most</strong>: " + $('#most').value;
+            $('#some_text').innerHTML = "<strong>Some</strong>: " + $('#some').value;
         }
         else {
-            $('all_text').innerHTML = "<strong>Must</strong>: " + $('all').value;
-            $('most_text').innerHTML = "<strong>Should</strong>: " + $('most').value;
-            $('some_text').innerHTML = "<strong>Could</strong>: " + $('some').value;
+            $('#all_text').innerHTML = "<strong>Must</strong>: " + $('#all').value;
+            $('#most_text').innerHTML = "<strong>Should</strong>: " + $('#most').value;
+            $('#some_text').innerHTML = "<strong>Could</strong>: " + $('#some').value;
         }
-        $('pre').show();
-        $('results').hide();
-        $('setup').hide();
-        $('before-bar').show();
-        $('after-bar').hide();
+        $('#pre').show();
+        $('#results').hide();
+        $('#setup').hide();
+        $('#before-bar').show();
+        $('#after-bar').hide();
     }
 
     function setup_post() {
-        if ($('ams').checked) {
-            $('all_text_post').innerHTML = "<strong>All</strong>: " + $('all').value;
-            $('most_text_post').innerHTML = "<strong>Most</strong>: " + $('most').value;
-            $('some_text_post').innerHTML = "<strong>Some</strong>: " + $('some').value;
+        if ($('#ams').checked) {
+            $('#all_text_post').innerHTML = "<strong>All</strong>: " + $('#all').value;
+            $('#most_text_post').innerHTML = "<strong>Most</strong>: " + $('#most').value;
+            $('#some_text_post').innerHTML = "<strong>Some</strong>: " + $('#some').value;
         }
         else {
-            $('all_text_post').innerHTML = "<strong>Must</strong>: " + $('all').value;
-            $('most_text_post').innerHTML = "<strong>Should</strong>: " + $('most').value;
-            $('some_text_post').innerHTML = "<strong>Could</strong>: " + $('some').value;
+            $('#all_text_post').innerHTML = "<strong>Must</strong>: " + $('#all').value;
+            $('#most_text_post').innerHTML = "<strong>Should</strong>: " + $('#most').value;
+            $('#some_text_post').innerHTML = "<strong>Could</strong>: " + $('#some').value;
         }
 
-        $('pre').hide();
-        $('results').show();
-        $('setup').hide();
-        $('after-bar').show();
+        $('#pre').hide();
+        $('#results').show();
+        $('#setup').hide();
+        $('#after-bar').show();
     }
 
     function increase_post(type) {
@@ -74,9 +74,9 @@
         }
         total_post++;
         $(type + '_count_post').innerHTML = val;
-        $('progress-bar-success-post').setAttribute("style", "width:" + all_post / total_post * 100 + "%");
-        $('progress-bar-warning-post').setAttribute("style", "width:" + most_post / total_post * 100 + "%");
-        $('progress-bar-danger-post').setAttribute("style", "width:" + some_post / total_post * 100 + "%");
+        $('#progress-bar-success-post').setAttribute("style", "width:" + all_post / total_post * 100 + "%");
+        $('#progress-bar-warning-post').setAttribute("style", "width:" + most_post / total_post * 100 + "%");
+        $('#progress-bar-danger-post').setAttribute("style", "width:" + some_post / total_post * 100 + "%");
     }
 
  function increase(type) {
@@ -95,9 +95,9 @@
    }
    total++;
    $(type + '_count').innerHTML = val;
-   $('progress-bar-success').setAttribute("style", "width:" + all / total * 100 + "%");
-   $('progress-bar-warning').setAttribute("style", "width:" + most / total * 100 + "%");
-   $('progress-bar-danger').setAttribute("style", "width:" + some / total * 100 + "%");
+   $('#progress-bar-success').setAttribute("style", "width:" + all / total * 100 + "%");
+   $('#progress-bar-warning').setAttribute("style", "width:" + most / total * 100 + "%");
+   $('#progress-bar-danger').setAttribute("style", "width:" + some / total * 100 + "%");
  }
   </script>
 </head>
