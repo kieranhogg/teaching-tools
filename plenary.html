@@ -24,14 +24,14 @@
 
     function setup() {
         if ($('#ams').checked) {
-            $('#all_text').innerHTML = "<strong>All</strong>: " + $('#all').value;
-            $('#most_text').innerHTML = "<strong>Most</strong>: " + $('#most').value;
-            $('#some_text').innerHTML = "<strong>Some</strong>: " + $('#some').value;
+            $('#all_text').text("<strong>All</strong>: " + $('#all').value);
+            $('#most_text').text("<strong>Most</strong>: " + $('#most').value);
+            $('#some_text').text("<strong>Some</strong>: " + $('#some').value);
         }
         else {
-            $('#all_text').innerHTML = "<strong>Must</strong>: " + $('#all').value;
-            $('#most_text').innerHTML = "<strong>Should</strong>: " + $('#most').value;
-            $('#some_text').innerHTML = "<strong>Could</strong>: " + $('#some').value;
+            $('#all_text').text("<strong>Must</strong>: " + $('#all').value);
+            $('#most_text').text("<strong>Should</strong>: " + $('#most').value);
+            $('#some_text').text("<strong>Could</strong>: " + $('#some').value);
         }
         $('#pre').show();
         $('#results').hide();
@@ -42,14 +42,14 @@
 
     function setup_post() {
         if ($('#ams').checked) {
-            $('#all_text_post').innerHTML = "<strong>All</strong>: " + $('#all').value;
-            $('#most_text_post').innerHTML = "<strong>Most</strong>: " + $('#most').value;
-            $('#some_text_post').innerHTML = "<strong>Some</strong>: " + $('#some').value;
+            $('#all_text_post').text("<strong>All</strong>: " + $('#all').value);
+            $('#most_text_post').text("<strong>Most</strong>: " + $('#most').value);
+            $('#some_text_post').text("<strong>Some</strong>: " + $('#some').value);
         }
         else {
-            $('#all_text_post').innerHTML = "<strong>Must</strong>: " + $('#all').value;
-            $('#most_text_post').innerHTML = "<strong>Should</strong>: " + $('#most').value;
-            $('#some_text_post').innerHTML = "<strong>Could</strong>: " + $('#some').value;
+            $('#all_text_post').text("<strong>Must</strong>: " + $('#all').value);
+            $('#most_text_post').text("<strong>Should</strong>: " + $('#most').value);
+            $('#some_text_post').text("<strong>Could</strong>: " + $('#some').value);
         }
 
         $('#pre').hide();
