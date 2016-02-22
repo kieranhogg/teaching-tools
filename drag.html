@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://code.jquery.com/jquery-1.12.0.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <style>
+  .draggable { width: 150px; padding: 0.5em; border: 1px solid black; }
+  </style>
+  <script>
+  function create() {
+      var lines = $('textarea#names').val().split('\n');
+        for(var i = 0;i < lines.length;i++){
+            $('#name_box').append('<div id="' + i + '" class="draggable"><p>' + lines[i] + '</p></div>');
+            $( "#" + i ).draggable();
+        }
+      $('#header_one').html($('#one').val());
+      $('#header_two').html($('#two').val());
+      $('#header_three').html($('#three').val());
+      $('#setup').hide();
+      $('#after').show();
+  }
+  </script>
+</head>
+<body>
+    <div style="margin: 0 auto; width: 70%">
+    <div id="setup">
+        <h1>Draggable names tool</h1>
+        <form>
+        <h2>Paste names</h2>
+        <textarea id="names" class="form-control"></textarea>
+            <h2>Three Learning Objectives/outcomes</h2>
+        <input id="one" type="text" class="form-control" />
+        <input id="two" type="text" class="form-control" />
+        <input id="three" type="text" class="form-control" />
+        <button type="button" class="btn btn-success btn-lg" onclick="create();">BEGIN!</button>
+        </form>
+    </div>
+    <div id="after" style="display:none">
+    <div id="headers">
+        <div style="width: 33%; float: left"><h2 id="header_one">One</h2></div>
+        <div style="width: 33%; float: left"><h2 id="header_two" >One</h2></div>
+        <div style="width: 33%; float: left"><h2 id="header_three">One</h2></div>
+    </div>
+     <div id="name_box" style="clear:both;">
+     </div>
+    </div>
+</div>
+</body>
+</html>
