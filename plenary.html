@@ -23,14 +23,15 @@
 
     function setup() {
         if (document.getElementById('ams').checked) {
-            document.body.innerHTML = document.body.innerHTML.replace(/All/g, 'Must');
-            document.body.innerHTML = document.body.innerHTML.replace(/Most/g, 'Should');
-            document.body.innerHTML = document.body.innerHTML.replace(/Some/g, 'Could');
+            document.getElementById('all_text').innerHTML = "<strong>All</strong>: " + document.getElementById('all').value;
+            document.getElementById('most_text').innerHTML = "<strong>Most</strong>: " + document.getElementById('most').value;
+            document.getElementById('some_text').innerHTML = "<strong>Some</strong>: " + document.getElementById('some').value;
         }
-        document.getElementById('all_text').innerHTML = "<strong>All</strong>: " + document.getElementById('all').value;
-        document.getElementById('most_text').innerHTML = "<strong>Most</strong>: " + document.getElementById('most').value;
-        document.getElementById('some_text').innerHTML = "<strong>Some</strong>: " + document.getElementById('some').value;
-
+        else {
+            document.getElementById('all_text').innerHTML = "<strong>Must</strong>: " + document.getElementById('all').value;
+            document.getElementById('most_text').innerHTML = "<strong>Should</strong>: " + document.getElementById('most').value;
+            document.getElementById('some_text').innerHTML = "<strong>Could</strong>: " + document.getElementById('some').value;
+        }
         document.getElementById('pre').style.display = 'block';
         document.getElementById('results').style.display = 'none';
         document.getElementById('setup').style.display = 'none';
@@ -39,9 +40,16 @@
     }
 
     function setup_post() {
-        document.getElementById('all_text_post').innerHTML = "<strong>All</strong>: " + document.getElementById('all').value;
-        document.getElementById('most_text_post').innerHTML = "<strong>Most</strong>: " + document.getElementById('most').value;
-        document.getElementById('some_text_post').innerHTML = "<strong>Some</strong>: " + document.getElementById('some').value;
+        if (document.getElementById('ams').checked) {
+            document.getElementById('all_text_post').innerHTML = "<strong>All</strong>: " + document.getElementById('all').value;
+            document.getElementById('most_text_post').innerHTML = "<strong>Most</strong>: " + document.getElementById('most').value;
+            document.getElementById('some_text_post').innerHTML = "<strong>Some</strong>: " + document.getElementById('some').value;
+        }
+        else {
+            document.getElementById('all_text_post').innerHTML = "<strong>Must</strong>: " + document.getElementById('all').value;
+            document.getElementById('most_text_post').innerHTML = "<strong>Should</strong>: " + document.getElementById('most').value;
+            document.getElementById('some_text_post').innerHTML = "<strong>Could</strong>: " + document.getElementById('some').value;
+        }
 
         document.getElementById('pre').style.display = 'none';
         document.getElementById('results').style.display = 'block';
