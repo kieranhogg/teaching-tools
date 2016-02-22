@@ -22,7 +22,7 @@
     var total_post = 0;
 
     function setup() {
-        if (document.getElementById('ams').checked()) {
+        if (document.getElementById('ams').checked) {
             document.body.innerHTML = document.body.innerHTML.replace(/All/g, 'Must');
             document.body.innerHTML = document.body.innerHTML.replace(/Most/g, 'Should');
             document.body.innerHTML = document.body.innerHTML.replace(/Some/g, 'Could');
