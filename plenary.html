@@ -33,11 +33,11 @@
             $('most_text').innerHTML = "<strong>Should</strong>: " + $('most').value;
             $('some_text').innerHTML = "<strong>Could</strong>: " + $('some').value;
         }
-        $('pre').style.display = 'block';
-        $('results').style.display = 'none';
-        $('setup').style.display = 'none';
-        $('before-bar').style.display = 'block';
-        $('after-bar').style.display = 'none';
+        $('pre').show();
+        $('results').hide();
+        $('setup').hide();
+        $('before-bar').show();
+        $('after-bar').hide();
     }
 
     function setup_post() {
@@ -52,10 +52,10 @@
             $('some_text_post').innerHTML = "<strong>Could</strong>: " + $('some').value;
         }
 
-        $('pre').style.display = 'none';
-        $('results').style.display = 'block';
-        $('setup').style.display = 'none';
-        $('after-bar').style.display = 'block';
+        $('pre').hide();
+        $('results').show();
+        $('setup').hide();
+        $('after-bar').show();
     }
 
     function increase_post(type) {
