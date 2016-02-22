@@ -22,6 +22,10 @@
     var total_post = 0;
 
     function setup() {
+        if (document.getElementById('all_text_post').innerHTML)
+        document.body.innerHTML = document.body.innerHTML.replace(/All/g, 'Must');
+        document.body.innerHTML = document.body.innerHTML.replace(/Most/g, 'Should');
+        document.body.innerHTML = document.body.innerHTML.replace(/Some/g, 'Could');
         document.getElementById('all_text').innerHTML = "<strong>All</strong>: " + document.getElementById('all').value;
         document.getElementById('most_text').innerHTML = "<strong>Most</strong>: " + document.getElementById('most').value;
         document.getElementById('some_text').innerHTML = "<strong>Some</strong>: " + document.getElementById('some').value;
@@ -91,12 +95,15 @@
 <body>
   <div style="margin: 0 auto; width: 70%">
     <div id="setup">
-      <h2>All</h2>
-      <textarea id="all" class="form-control" rows="3"></textarea>
-      <h2>Most</h2>
-      <textarea id="most" class="form-control" rows="3"></textarea>
-      <h2>Some</h2>
-      <textarea id="some" class="form-control" rows="3"></textarea>
+      <h2>All/Must</h2>
+      <textarea id="all" class="form-control"></textarea>
+      <h2>Most/Should</h2>
+      <textarea id="most" class="form-control"></textarea>
+      <h2>Some/Could</h2>
+      <textarea id="some" class="form-control"></textarea>
+       
+      <input type="radio" name="display" value="ams" checked> All/Most/Some<br>
+      <input type="radio" name="display" value="msc"> Must/Should/Could<br>
       <br />
       <button type="button" class="btn" onclick="setup();">Pre- and post-lesson check</button>
       <button type="button" class="btn" onclick="setup_post();">Post-lesson only</button>
