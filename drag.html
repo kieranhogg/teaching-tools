@@ -43,10 +43,17 @@
   .draggable:focus { box-shadow:0 5px 12px rgba(0,0,0,0.2); outline:none; }
   
   .header { 
-      border-bottom: 1px solid black;
       width: 31%; float: left;
       margin-left: 1%;
       margin-right: 1%;
+      padding: 10px;
+      border-bottom-left-radius:5px; // i use percentage  u can use pix.
+      border-bottom-right-radius:25%;// i use percentage  u can use pix.
+  }
+      
+  .yellow {
+      background-color: #EBD428;
+      color: black;
   }
       
   #setup {
@@ -76,6 +83,48 @@
       $('#header_three').html($('#three').val());
       $('#setup').hide();
       $('#after').show();
+      
+      var colour_one = $('input:radio[name=colour-one]:checked').val();
+      
+      if (colour_one == 'blue') {
+          $('#header_one').addClass('btn-primary');
+      } else if (colour_one == 'green') {
+         $('#header_one').addClass('btn-success');
+      } else if (colour_one == 'red') {
+         $('#header_one').addClass('btn-danger');
+      } else if (colour_one == 'orange') {
+         $('#header_one').addClass('btn-warning');
+      } else if (colour_one == 'yellow') {
+         $('#header_one').addClass('yellow');
+      }
+      
+      var colour_two = $('input:radio[name=colour-two]:checked').val();
+      
+      if (colour_two == 'blue') {
+          $('#header_two').addClass('btn-primary');
+      } else if (colour_two == 'green') {
+         $('#header_two').addClass('btn-success');
+      } else if (colour_two == 'red') {
+         $('#header_two').addClass('btn-danger');
+      } else if (colour_two == 'orange') {
+         $('#header_two').addClass('btn-warning');
+      } else if (colour_two == 'yellow') {
+         $('#header_two').addClass('yellow');
+      }
+      
+      var colour_three = $('input:radio[name=colour-three]:checked').val();
+      
+      if (colour_three == 'blue') {
+          $('#header_three').addClass('btn-primary');
+      } else if (colour_three == 'green') {
+         $('#header_three').addClass('btn-success');
+      } else if (colour_three == 'red') {
+         $('#header_three').addClass('btn-danger');
+      } else if (colour_three == 'orange') {
+         $('#header_three').addClass('btn-warning');
+      } else if (colour_three == 'yellow') {
+         $('#header_three').addClass('yellow');
+      }
   }
   </script>
 </head>
@@ -88,11 +137,11 @@
         <textarea rows="5" id="names" class="form-control"></textarea>
         <h2>Learning Objectives/outcomes/categories</h2>
             <p><input id="one" type="text" class="form-control" /> 
-            	Colour: <input type="radio" name="colour-one" value="default" checked> Default <input type="radio" name="colour-one" value="default"> Red <input type="radio" name="colour-one" value="red"> Orange <input type="radio" name="colour-one" value="orange"> Yellow <input type="radio" name="colour-one" value="green"> Green <input type="radio" name="colour-one" value="blue"> Blue</p>
+            	Colour: <input type="radio" name="colour-one" value="default" checked> Default <input type="radio" name="colour-one" value="red"> Red <input type="radio" name="colour-one" value="orange"> Orange <input type="radio" name="colour-one" value="yellow"> Yellow <input type="radio" name="colour-one" value="green"> Green <input type="radio" name="colour-one" value="blue"> Blue</p>
             <p><input id="two" type="text" class="form-control" />
-                Colour: <input type="radio" name="colour-two" value="default" checked> Default <input type="radio" name="colour-two" value="default"> Red <input type="radio" name="colour-two" value="red"> Orange <input type="radio" name="colour-two" value="orange"> Yellow <input type="radio" name="colour-two" value="green"> Green <input type="radio" name="colour-two" value="blue"> Blue</p>
+                Colour: <input type="radio" name="colour-two" value="default" checked> Default <input type="radio" name="colour-two" value="red"> Red <input type="radio" name="colour-two" value="orange"> Orange <input type="radio" name="colour-two" value="yellow"> Yellow <input type="radio" name="colour-two" value="green"> Green <input type="radio" name="colour-two" value="blue"> Blue</p>
             <p><input id="three" type="text" class="form-control" />
-                Colour: <input type="radio" name="colour-three" value="default" checked> Default <input type="radio" name="colour-three" value="default"> Red <input type="radio" name="colour-three" value="red"> Orange <input type="radio" name="colour-three" value="orange"> Yellow <input type="radio" name="colour-three" value="green"> Green <input type="radio" name="colour-three" value="blue"> Blue</p>
+                Colour: <input type="radio" name="colour-three" value="default" checked> Default <input type="radio" name="colour-three" value="red"> Red <input type="radio" name="colour-three" value="orange"> Orange <input type="radio" name="colour-three" value="yellow"> Yellow <input type="radio" name="colour-three" value="green"> Green <input type="radio" name="colour-three" value="blue"> Blue</p>
 	    </p>
         <button type="button" class="btn btn-success btn-lg" onclick="create();">BEGIN!</button>
         </form>
