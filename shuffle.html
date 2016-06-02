@@ -28,7 +28,7 @@
 			    }
 			};
 
-			var p1 = getUrlParameter('1');
+			$('#p1').value = getUrlParameter('1');
 			var p2 = getUrlParameter('2');
 			var p3 = getUrlParameter('3');
 			var p4 = getUrlParameter('4');
@@ -470,17 +470,15 @@
 						<div>Spin your elements!</div>
 
 						<div id="planeMachine">
-							<div class="text-center">
-								<script> print p1; </script> <span class="badge">46 <span class="glyphicon glyphicon-euro"></span></span>
+							<div class="text-center" id="p1">
 							</div>
-							<div class="text-center">
-								London <span class="badge">30 <span class="glyphicon glyphicon-euro"></span></span>
+							<div class="text-center" id="p2">
 							</div>
-							<div class="text-center">
-								New York <span class="badge">237 <span class="glyphicon glyphicon-euro"></span></span>
+							<div class="text-center" id="p3">
 							</div>
-							<div class="text-center">
-								Matrix <span class="badge">undefined <span class="glyphicon glyphicon-euro"></span></span>
+							<div class="text-center" id="p4">
+							</div>
+							<div class="text-center" id="p5">
 							</div>
 						</div>
 
